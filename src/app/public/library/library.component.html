@@ -1,0 +1,47 @@
+<p>library works!</p>
+
+<div class="main-wrapper">
+    <div class="table-wrapper">
+        <mat-table [dataSource]="dataSource"
+        class="books">
+            <ng-container matColumnDef="position">
+                <mat-cell
+                  class="position"
+                  *matCellDef="let i = index;">
+                  <span>{{i}}.</span>
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="author">
+                <mat-cell
+                  class="author"
+                  *matCellDef="let book;">
+                  <span>{{book?.author}}</span>
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="title">
+                <mat-cell
+                  class="title"
+                  *matCellDef="let book;">
+                  <span>{{book?.title}}</span>
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="isbn">
+                <mat-cell
+                  class="isbn"
+                  *matCellDef="let book;">
+                  <span>{{book?.isbn}}</span>
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="description">
+                <mat-cell
+                  class="description"
+                  *matCellDef="let book;">
+                  <span>{{book?.description}}</span>
+                </mat-cell>
+            </ng-container>
+            <mat-row *matRowDef="let row; columns: displayedColumns; let i = index;">    
+            </mat-row>
+
+        </mat-table>
+    </div>
+</div>
